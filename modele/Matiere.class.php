@@ -8,6 +8,7 @@
  	private $noUE;
  	private $noMatiereUE;
  	private $Enseignants = array();
+ 	private $VolumesHoraires = array();
  	private $libelle;
  	private $Classe;
  	
@@ -29,7 +30,34 @@
  		}
  	}
  	
+ 	/**
+ 	 * @method addHoraire
+ 	 * @param array $value
+ 	 * This function add A array of Hours corresponding the last Teacher of Teachers Array
+ 	 */
  	
+ 	public function addHoraire($value){
+ 		// $value must be a array formulated like
+ 		// array("CM"=>value,"TD"=>value,"TP"=>value)
+ 		array_push($this->VolumesHoraires,$value);
+ 		
+ 	}
+ 	
+ 	public function lastHoraire(){
+ 		return end($this->VolumesHoraires);
+ 	}
+ 	
+ 	public function addFirstHoraire($type,$value){
+ 		if($type == "CM"){
+ 			$this->VolumesHoraires[0]["CM"]=$value;
+ 		}
+ 		if($type == "TD"){
+ 			$this->VolumesHoraires[0]["TD"]=$value;
+ 		}
+ 		if($type == "TP"){
+ 			$this->VolumesHoraires[0]["TP"]=$value;
+ 		}
+ 	}
  	
  	
  	public function addEnseignant($value){

@@ -4,7 +4,7 @@ require_once '../PHPExcel_1.8.0_doc/Classes/PHPExcel/IOFactory.php';
 require_once '../modele/MyReadFilter.class.php';
 require_once '../modele/Matiere.class.php';
 require_once '../modele/Enseignant.class.php';
-require 'Controller.class.php';
+require_once 'Controller.class.php';
 class DataExtractionController extends Controller{
 
 	private $MatiereList = array();
@@ -95,16 +95,19 @@ class DataExtractionController extends Controller{
 				if($column == CM){
 						
 					end($this->MatiereList)->CM = $valeur;
+					end($this->MatiereList)->addFirstHoraire("CM",$valeur);
 				}
 			
 				if($column == TD){
 			
 					end($this->MatiereList)->TD = $valeur;
+					end($this->MatiereList)->addFirstHoraire("TD",$valeur);
 				}
 			
 				if($column == TP){
 			
 					end($this->MatiereList)->TP = $valeur;
+					end($this->MatiereList)->addFirstHoraire("TP",$valeur);
 				}
 			}
 			
@@ -134,6 +137,6 @@ class DataExtractionController extends Controller{
 		
 }
 
-$ex = new DataExtractionController();
-$ex->execute();
-var_dump($ex->MatiereList[100]);
+//$ex = new DataExtractionController();
+//$ex->execute();
+//var_dump($ex->MatiereList[100]);
