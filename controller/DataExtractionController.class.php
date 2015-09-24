@@ -134,6 +134,10 @@ class DataExtractionController extends Controller{
 		}
 	}
 	
+	public function destroy($ind){
+		//unset($this->MatiereList[$ind]);
+		$this->MatiereList[$ind] = null;
+	}
 		
 }
 
