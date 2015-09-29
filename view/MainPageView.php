@@ -55,9 +55,9 @@ foreach ($filter->filteredClassList as $value) {
 	echo '<li role="presentation" class="active dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">'.$value.' <span class="caret"></span></a>
 	  						<ul class="dropdown-menu">
 									
-	      						<li><button class="btn btn-default btn-block" value="'.$urlLien.'_S1">Semestre 1</button></li>
+	      						<li><button class="btn btn-default btn-block classOption" value="'.$urlLien.'_S1">Semestre 1</button></li>
 	      						<li role="separator" class="divider"></li>
-	      						<li><button class="btn btn-default btn-block" value="'.$urlLien.'_S2">Semestre 2</button></li>
+	      						<li><button class="btn btn-default btn-block classOption" value="'.$urlLien.'_S2">Semestre 2</button></li>
 								
 	    					</ul>
 	  					</li>';
@@ -94,7 +94,10 @@ foreach ($filter->filteredClassList as $value) {
 
 
 $(document).ready(function(){
-	
+	var formation = $(".classOption");
+		formation.click(function(){
+			alert($(this).attr("value"));
+		});
 });
 
 

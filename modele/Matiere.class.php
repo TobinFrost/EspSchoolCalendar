@@ -1,16 +1,16 @@
 <?php
  class Matiere {
- 	private $CM = 0;
- 	private $TD = 0;
- 	private $TP = 0;
- 	private $Annee;
- 	private $Semestre;
- 	private $noUE;
- 	private $noMatiereUE;
- 	private $Enseignants = array();
- 	private $VolumesHoraires = array();
- 	private $libelle;
- 	private $Classe;
+ 	public $CM = 0;
+ 	public $TD = 0;
+ 	public $TP = 0;
+ 	public $Annee;
+ 	public $Semestre;
+ 	public $noUE;
+ 	public $noMatiereUE;
+ 	public $Enseignants = array();
+ 	public $VolumesHoraires = array();
+ 	public $libelle;
+ 	public $Classe;
  	
  	
  	
