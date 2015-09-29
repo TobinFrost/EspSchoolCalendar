@@ -5,28 +5,26 @@ class DataAnalyserController extends Controller{
 	
 	public  $filteredMatiereList = array();
 	public  $noFilteredClassList = array();
-	public $mainMatiereList = array();
 	
-	public function __construct($MatiereList){
+	public function __construct(){
 		parent::__construct();
-		$this->mainMatiereList = $MatiereList;
 	}
 	
 	public function execute(){
-		//$extract = new DataExtractionController();
-		//$extract->execute();
+		$extract = new DataExtractionController();
+		$extract->execute();
 		//var_dump($extract->MatiereList[50]); // It is a good Example of the next Algo . wait and see
 		// We have to trie the MatiereList to 
 		//echo count($extract->MatiereList);
-		for ($i = 0; $i <count($this->mainMatiereList); $i++) { 
+		for ($i = 0; $i <count($extract->MatiereList); $i++) { 
 			// If a Subject has more than one Teacher we push the Teacher on the current Subject 
 			//All Right Let's do it
-			$currentMatiere = $this->mainMatiereList[$i];
+			$currentMatiere = $extract->MatiereList[$i];
 			//array_push($this->noFilteredClassList, $currentMatiere->Classe);
 			//$counter = 0; // the counter of similar Matiere
 			if (is_object($currentMatiere)) array_push($this->noFilteredClassList, $currentMatiere->Classe);
-			 for ($y = $i+1; $y < count($this->mainMatiereList) ; $y++) {
-			 	$comparMatiere = $this->mainMatiereList[$y];
+			 for ($y = $i+1; $y < count($extract->MatiereList) ; $y++) {
+			 	$comparMatiere = $extract->MatiereList[$y];
 			 	if(!is_null($comparMatiere) && !is_null($currentMatiere)){
 			 	if((is_object($comparMatiere) && is_object($currentMatiere)) || (spl_object_hash($comparMatiere) != spl_object_hash($currentMatiere))){
 			 		
@@ -42,7 +40,7 @@ class DataAnalyserController extends Controller{
 					 		$horaire = array("CM"=>$comparMatiere->CM,"TD"=>$comparMatiere->TD,"TP"=>$comparMatiere->TP);
 					 		$currentMatiere->addHoraire($horaire);
 							if(spl_object_hash($comparMatiere) != spl_object_hash($currentMatiere)){
-								//$extract->destroy($y);
+								$extract->destroy($y);
 								array_push($this->filteredMatiereList, $currentMatiere);
 								
 								
