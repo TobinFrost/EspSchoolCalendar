@@ -27,7 +27,7 @@ abstract class Controller {
 		// donnée à reposter (si necessaire)
 		protected $repost_data=array();
 		
-		protected $projectname="DPP";
+		protected $projectname="EspSchoolCalendar";
 		// constructeur
 		public function __construct(){
 
@@ -38,7 +38,7 @@ abstract class Controller {
 
 		$this->action=$_GET['control']; 
 		$this->execute();
-		$url='http://'.$_SERVER['HTTP_HOST']."/EspSchoolCalendar/".$this->repertoire.'/'.$this->destination;
+		$url='http://'.$_SERVER['HTTP_HOST']."/EspSchoolCalendar2.0/".$this->repertoire.'/'.$this->destination;
 		if (count($this->repost_data)==0) header('Location: '.$url);
 		else $this->repost($url);
 

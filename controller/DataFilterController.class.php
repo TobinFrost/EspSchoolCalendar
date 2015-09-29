@@ -1,16 +1,15 @@
 <?php
 require_once 'Controller.class.php';
-require "DataAnalyserController.class.php";
+require_once "DataAnalyserController.class.php";
 class DataFilterController extends Controller{
 	public $filteredClassList = array();
-	public function __construct(){
+	public function __construct($noFilteredClassList){
 		parent::__construct();
+		$this->filteredClassList = $noFilteredClassList;
 	}
 	
 	public function execute(){
-		$ana = new DataAnalyserController();
-		$ana->execute();
-		$this->filteredClassList = array_unique($ana->noFilteredClassList);
+		$this->filteredClassList = array_unique($this->filteredClassList);
 	}
 }
 
