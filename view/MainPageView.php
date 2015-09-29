@@ -39,9 +39,9 @@
 <div class="row">
 
 <?php
-//include_once '../controller/DataFilterController.class.php';
-//$filter = new DataFilterController();
-//$filter->execute();
+include_once '../controller/DataFilterController.class.php';
+$filter = new DataFilterController();
+$filter->execute();
 ?>
 <div id="classes" class="col-md-2">
 				 
@@ -95,23 +95,8 @@ foreach ($filter->filteredClassList as $value) {
 
 $(document).ready(function(){
 	var formation = $(".classOption");
-	var affectation = $("#Affectation");
 		formation.click(function(){
 			alert($(this).attr("value"));
-			var formationValue = $(this).attr("value");
-			affectation.html("<div id='smallpreloader'></div>");
-			$.post("../controller/ApplicationController.class.php",{AffectationList:formationValue},function(data,status){
-	            //alert("Data: " + data + "\nStatus: " + status);
-	            if(status =="success"){
-	            	//load.html('');
-	            	//alert("youpie");
-	            	affectation.html(data);
-	            }else{
-	            	alert("Booo !");
-	            }
-	        });
-			
-		
 		});
 });
 
