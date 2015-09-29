@@ -8,6 +8,7 @@ class AffectationPreview extends Controller{
 	public $Classe;
 	public $Semestre;
 	public $MatiereList = array();
+	public $RequestMatiere = array();
 	
 	function __construct($ClasseRequest,$MatiereList){
 		parent::__construct();
@@ -20,27 +21,20 @@ class AffectationPreview extends Controller{
 	
 	function execute(){
 		
-		//$ana = new DataAnalyserController();
-		//$ana->execute();
-		//var_dump($ana->filteredMatiereList);
-/**		foreach ($ana->filteredMatiereList as $Matiere) {
-			//;
-			if($Matiere->Classe == $this->Classe){
-				//echo "ok";
-				var_dump($Matiere);
-			}
-		}
-**/		
 		for ($i = 0; $i < count($this->MatiereList); $i++) {
 			$Matiere = $this->MatiereList[$i];
 			if($Matiere->Classe == $this->Classe){
 				//echo "ok";
-				var_dump($Matiere);
-			}
+				if("S".$Matiere->Semestre == $this->Semestre){
+					//var_dump($Matiere);
+					array_push($this->RequestMatiere, $Matiere);
+				}// Semestre Test
+				
+			}// class Test
 		}
-	}
+	} // end of execute algorithme
 	
-}
+} // end of classes
 
 
 //$preview  = new AffectationPreview("Master-1.GL_S2");
