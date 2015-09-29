@@ -24,6 +24,8 @@
     margin-top:40px;
 	}
 	
+	div#smallpreloader{position: fixed; left: 0; top: 0; z-index: 999; width: 100%; height: 100%; overflow: visible; background: url('../images/smallpreloader.GIF') no-repeat center center;}
+	
 	#classes{
    	
 	}
@@ -48,7 +50,7 @@
 	<script type="text/javascript">
 	$(document).ready(function(){
 		var html = $(".js");
-		$.post("MainPageView.php",{},function(data,status){
+		$.post("../controller/ApplicationController.class.php",{ClassList:"voila"},function(data,status){
             //alert("Data: " + data + "\nStatus: " + status);
             if(status =="success"){
             	//load.html('');
