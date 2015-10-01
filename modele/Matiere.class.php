@@ -5,6 +5,8 @@
  	public $TP = 0;
  	public $Annee;
  	public $Semestre;
+ 	public $Semestre1;
+ 	public $Semestre2;
  	public $noUE;
  	public $noMatiereUE;
  	public $Enseignants = array();

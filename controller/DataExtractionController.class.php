@@ -92,6 +92,18 @@ class DataExtractionController extends Controller{
 					//echo $TeacherInfo;
 				}
 			
+				if($column == SEMESTRE1){
+					
+					end($this->MatiereList)->Semestre1 = $valeur;
+					
+				}
+				
+				if($column == SEMESTRE2){
+						
+					end($this->MatiereList)->Semestre2 = $valeur;
+						
+				}
+				
 				if($column == CM){
 						
 					end($this->MatiereList)->CM = $valeur;

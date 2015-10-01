@@ -25,10 +25,19 @@ class AffectationPreview extends Controller{
 			$Matiere = $this->MatiereList[$i];
 			if($Matiere->Classe == $this->Classe){
 				//echo "ok";
-				if("S".$Matiere->Semestre == $this->Semestre){
-					//var_dump($Matiere);
-					array_push($this->RequestMatiere, $Matiere);
-				}// Semestre Test
+				if($this->Semestre == "S1"){
+					if($Matiere->Semestre1 == "Oui"){
+						array_push($this->RequestMatiere, $Matiere);
+					}
+				}
+				
+				if($this->Semestre == "S2"){
+					if($Matiere->Semestre2 == "Oui"){
+						array_push($this->RequestMatiere, $Matiere);
+					}
+				}
+				
+
 				
 			}// class Test
 		}

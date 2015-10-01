@@ -34,7 +34,8 @@ class ApplicationController extends Controller{
 		if(isset($_POST["AffectationList"])){
 			$preview = new AffectationPreview($_POST["AffectationList"], $this->PrincipaleMatiereList);
 			$preview->execute();
-			var_dump($preview->RequestMatiere);
+			//var_dump($preview->RequestMatiere);
+			include_once '../view/AffectationView.php';
 		} // This is for showing Affectation Table
 		
 	}

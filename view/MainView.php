@@ -30,6 +30,15 @@
    	
 	}
 
+	#Affectation{
+	overflow-y: scroll;
+	height: 600px;
+	}
+	
+	#AffectationTable{
+	overflow-y: scroll;
+	
+	}
 	
 	h3 {
     color: #1d7886;
