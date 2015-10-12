@@ -49,6 +49,10 @@ class Enseignant {
  		
  		
  	}
+ 	
+ 	public function __toString(){
+ 		return $this->Prenom." ".$this->Nom;
+ 	}
 
 
 }

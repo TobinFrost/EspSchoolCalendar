@@ -1,5 +1,5 @@
 <?php
-
+require_once 'FlyweightHeure.php';
 class FlyweightHeureFactory{
 	private $Heures = array();
 	
@@ -19,28 +19,28 @@ class FlyweightHeureFactory{
 	
 	function makeHeure1(){
 
-		$heure = new FlyweightHeure("8","10");
+		$heure = new FlyweightHeure("08H00","10H00");
 		
 		return $heure;
 	}
 	
 	function makeHeure2(){
 	
-		$heure = new FlyweightHeure("10","12");
+		$heure = new FlyweightHeure("10H00","12H00");
 	
 		return $heure;
 	}
 	
 	function makeHeure3(){
 	
-		$heure = new FlyweightHeure("14.30","16.30");
+		$heure = new FlyweightHeure("14H30","16H30");
 	
 		return $heure;
 	}
 	
 	function makeHeure4(){
 	
-		$heure = new FlyweightHeure("16.30","18.30");
+		$heure = new FlyweightHeure("16H30","18H30");
 	
 		return $heure;
 	}

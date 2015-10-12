@@ -1,5 +1,5 @@
 <?php
-require_once '../PHPExcel_1.8.0_doc/Classes/PHPExcel/IOFactory.php';
+require_once '../Classes/PHPExcel/IOFactory.php';
 
 const TYPE_ENSEIGNANT = 'A';
 const NOM = 'B';

@@ -30,6 +30,8 @@
  		$this->libelle = $libelletmp;
  		//echo "la position du : est ".$markerpos;
  		}
+ 		
+ 		
  	}
  	
  	/**

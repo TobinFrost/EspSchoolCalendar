@@ -69,6 +69,7 @@
             	alert("Booo !");
             }
         });
+		        
 	});
 	</script>
 </body>

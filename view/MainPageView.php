@@ -19,7 +19,7 @@
 					<input id="myFile" class="form-control" placeholder="Choisissez un fichier" type="file" onchange="" accept=".xlsx,.xls">
 					<br>
 					
-					<!-- <button class="btn btn-success nextBtn btn-lg pull-right" type="button">GENERER</button>  -->
+					
 				
 				</div>
 		</div>
@@ -72,9 +72,12 @@ foreach ($filter->filteredClassList as $value) {
 			<caption>Affectations</caption>
 			<tr><th>Nom Professeur</th><th>Mati&egrave;re</th> <th> CM </th> <th> TD </th> <th> TP </th> </tr>
 			</table>
-		<button class="btn btn-success nextBtn btn-lg pull-right" type="button">GENERER</button>
+		
 		</div>	
 
+		<div class="col-md-2">
+			<button value="" id="generateBtn" class="btn btn-success nextBtn btn-lg pull-right" type="button">GENERER</button>
+		</div>
 			
 			
 				 		
@@ -96,9 +99,34 @@ foreach ($filter->filteredClassList as $value) {
 $(document).ready(function(){
 	var formation = $(".classOption");
 	var affectation = $("#Affectation");
+	var generateBtn = $("#generateBtn");
+	
+	
+	generateBtn.click(function(){
+		alert("Generating ... !");
+		var formationValue = $(this).attr("value");
+		affectation.html("<div id='smallpreloader'></div>");
+		$.post("../controller/ApplicationController.class.php",{GenerationEmploi:formationValue},function(data,status){
+            //alert("Data: " + data + "\nStatus: " + status);
+            if(status =="success"){
+            	//load.html('');
+            	//alert("youpie");
+            	affectation.html(data);
+            }else{
+            	alert("Booo !");
+            }
+        });
+
+
+	});
+	
+		
 		formation.click(function(){
 			//alert($(this).attr("value"));
 			var formationValue = $(this).attr("value");
+			var generateBtn = $("#generateBtn");
+			generateBtn.attr("value",formationValue);
+			
 			affectation.html("<div id='smallpreloader'></div>");
 			$.post("../controller/ApplicationController.class.php",{AffectationList:formationValue},function(data,status){
 	            //alert("Data: " + data + "\nStatus: " + status);

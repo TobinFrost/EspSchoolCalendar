@@ -3,7 +3,7 @@ class Affectation{
 	private $Heure;
 	private $Matiere;
 	
-	public function __construct($Matiere,$Heure){
+	public function __construct($Matiere=null,$Heure=null){
 		$this->Heure = $Heure;
 		$this->Matiere = $Matiere;
 	}
@@ -21,5 +21,10 @@ class Affectation{
 		if (property_exists($this, $property)){
 			return $this->$property;
 		}
+	}
+	
+	public function __clone(){
+		$this->Heure = $this->Heure;
+		$this->Matiere = $this->Matiere;
 	}
 }

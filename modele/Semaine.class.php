@@ -1,11 +1,13 @@
 <?php
 
 class Semaine {
-	private $Jours;
+	private $Jours; // length must be 7 
 	
-	public function __construct($JoursTable){
+	public function __construct($JoursTable=NULL){
 		if(is_array($JoursTable)){
 		$this->Jours = new ArrayObject($JoursTable);
+		}else {
+		$this->Jours = new ArrayObject(array());
 		}
 	}// end of Constructor
 	

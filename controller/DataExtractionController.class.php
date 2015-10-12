@@ -1,6 +1,6 @@
 <?php
 //require_once ('../lib/autoload2.inc.php');
-require_once '../PHPExcel_1.8.0_doc/Classes/PHPExcel/IOFactory.php';
+require_once '../Classes/PHPExcel/IOFactory.php';
 require_once '../modele/MyReadFilter.class.php';
 require_once '../modele/Matiere.class.php';
 require_once '../modele/Enseignant.class.php';

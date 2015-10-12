@@ -14,4 +14,16 @@ class FlyweightHeure{
 	public function getHoraireFin(){
 		return $this->HoraireFin;
 	}
+	
+	public function setHoraireDebut($h){
+		$this->HoraireDebut = $h;
+	}
+	
+	public function setHoraireFin($h){
+		$this->HoraireFin = $h;
+	}
+	
+	public function __toString(){
+		return $this->HoraireDebut.$this->HoraireFin;
+	}
 }

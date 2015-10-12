@@ -15,8 +15,8 @@
 				echo "<td>".$Matiere->TP."</td>";
 				echo "</tr>";
 			}
-			?>
+			?>	
 			<tr> <td></td> <td></td> <td></td> <td></td> <td></td></tr>
 			</table>
-		<button class="btn btn-success nextBtn btn-lg pull-right" type="button">GENERER</button>
+		
 		</div>	
